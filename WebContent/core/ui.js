@@ -27,6 +27,24 @@ window.GENTICS.Aloha.ui = window.GENTICS.Aloha.ui || {};
 		GENTICS = window.GENTICS,
 		Aloha = GENTICS.Aloha;
 
+
+	/**
+	 * Create a Button
+	 */
+	Aloha.ui.createButton = function( ID, config ){
+			var $button = $( "<button>"
+				+ Aloha.API.translate( config.text || ID )
+			+ "</button>" ).button();
+
+			Aloha.ui.store(ID, {
+					config: config,
+					element: $button
+			});
+
+			return $button;
+	};
+
+
 /**
  * Constructor for an Aloha button.
  * @namespace GENTICS.Aloha.ui
